@@ -1,0 +1,9 @@
+<h1>Create a New Flyer:</h1>
+
+<%= form_for :flyer do |f| %>
+  Title: <%= f.text_field :title %><br />
+  Address : <%= f.text_field :address %><br />
+  Description : <%= f.text_area :description %><br />
+  Contact: <%= f.text_area :contact %><br />
+  <%= f.submit %>
+<% end %>

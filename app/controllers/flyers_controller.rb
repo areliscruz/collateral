@@ -1,0 +1,2 @@
+class FlyersController < ApplicationController
+end
