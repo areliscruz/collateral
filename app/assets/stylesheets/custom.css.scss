@@ -1,0 +1,19 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+.lobster_font {
+	font-family: 'Lobster', cursive;	
+}
+
+.m_hotpink {
+  color: #FF0066;
+}
+
+.btn-hot_pink {
+  color: #fff;
+  background-color: #FF0066;
+  border-color: #FF0066;
+}
+

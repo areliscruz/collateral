@@ -1,0 +1,10 @@
+<%= simple_form_for(@flyer, html: {:class => 'form-horizontal'}) do |f| %>
+  <%= f.input :title, label: false, input_html: {:class => "form-control", placeholder: "Title"} %><br />
+  <%= f.input :image, label: false, input_html: {:class => "form-control", placeholder: "Title"} %><br />
+  <%= f.input :address, label: false, input_html: {:class => "form-control", placeholder: "Title"}  %><br />
+  <%= f.input :description, label: false, input_html: {:class => "form-control", placeholder: "Title"} %><br />
+  <%= f.input :contact, label: false, input_html: {:class => "form-control", placeholder: "Title"} %><br />
+  <div style="text-align:center;">
+  <%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-default' %>
+</div> 
+<% end %>

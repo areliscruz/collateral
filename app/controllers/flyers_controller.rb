@@ -23,15 +23,17 @@ class FlyersController < ApplicationController
   end
 
   def show 
-    @flyer = Flyer.find params[:id]
+    @flyer = find_flyer
   end
 
   def edit
+    @flyer = find_flyer
   end
   
   def update
+    @flyer = find_flyer
     respond_to do |format|
-      if @flyer.update(awesome_params)
+      if @flyer.update(flyer_params)
         format.html { redirect_to @flyer, notice: 'Flyer was successfully updated.' }
         format.json { render :show, status: :ok, location: @flyer }
       else
@@ -42,17 +44,24 @@ class FlyersController < ApplicationController
   end
   
   def destroy
+    @flyer = find_flyer
     @flyer.destroy
     respond_to do |format|
-      format.html { redirect_to flyer_url, notice: 'Flyer was successfully destroyed.' }
+      format.html { redirect_to flyers_url, notice: 'Flyer was successfully destroyed.' }
       format.json { head :no_content }
+    end
   end
 
   private
+
+  def find_flyer
+    Flyer.find(params[:id])
+  end
+
 
   def flyer_params
     params.require(:flyer).permit(:title, :address, :description, :contact, :image)
   end
 
-end 
+
 end

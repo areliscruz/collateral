@@ -1,4 +1,10 @@
-<table>
+<div class="col-xs-12">
+<h1 style="color:#dddddd;"> Flyers </h1> 
+
+<div class="table-responsive">
+
+
+<table class= "table table-hover table-bordered">
   <thead>
     <tr>
       <th>Title</th>
@@ -12,12 +18,16 @@
       <tr>
         <td><%= flyer.title %></td>
         <td><%= flyer.address %></td>
-        <td><%= link_to 'Show', flyer %></td>
+        <td><%= link_to 'Show', flyer, :class => "btn btn-hot_pink btn-sm" %>
+        <%= link_to 'Delete', flyer, method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-default btn-sm" %>
+        <%= link_to 'Edit', edit_flyer_path(flyer), :class => "btn btn-success btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div> 
 <br>
 
 <%= link_to 'New Flyers', new_flyer_path %>
+
+</div> 
