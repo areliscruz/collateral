@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'collateral#index'
 
-  resources :collateral, only: [:show, :index]
-  resources :flyers, only: [:create, :new, :show]
+  resources :collateral, only: [:show, :new, :index]
+  resources :flyers, only: [ :new, :show, :create, :index]
 end
