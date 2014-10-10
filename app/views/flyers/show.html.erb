@@ -1,6 +1,15 @@
-<h1><%= @flyer.title %></h1>
+<div class="col-xs-10">
 
-<p><%= @flyer.address %> </p>
+<div class="page-header">
+  <h1><%= @flyer.title %> <small><%= @flyer.address %> </small></h1>
+</div>
+
+
 <%= image_tag @flyer.image %>
-<p><%= @flyer.description %> </p>
-<p><%= @flyer.contact %> <p>
+<h5><%= @flyer.description %> </h5>
+<h5><%= @flyer.contact %> </h5>
+
+<p>
+<button type="button" class="btn btn-lg btn-info">Create PDF</button>
+</p>
+</div>

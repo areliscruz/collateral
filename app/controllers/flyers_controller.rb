@@ -2,6 +2,14 @@ class FlyersController < ApplicationController
 	
   def index
     @flyer = Flyer.all
+    respond_to do |format|
+    format.html
+    format.pdf do
+      pdf = PDF::Writer.new
+      pdf.text "text"
+      # send_data FlyerDrawer.draw(@flyers), :filename => 'flyer.pdf', :type => 'application/pdf', :disposition => 'inline'
+    end
+  end
   end
 
   def new
@@ -24,7 +32,8 @@ class FlyersController < ApplicationController
 
   def show 
     @flyer = find_flyer
-  end
+
+end
 
   def edit
     @flyer = find_flyer
